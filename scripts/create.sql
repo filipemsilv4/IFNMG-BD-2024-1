@@ -104,7 +104,7 @@ CREATE TABLE
 
 CREATE TABLE
     Blog (
-        url VARCHAR2 (250),
+        url VARCHAR2 (50),
         datacriacao DATE,
         nome VARCHAR2 (20),
         datalineup DATE
