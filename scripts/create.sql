@@ -114,7 +114,11 @@ CREATE TABLE
     LineUp (datalineup DATE, capacidade NUMBER);
 
 CREATE TABLE
-    Show (datalineup DATE, horainicio VARCHAR2 (10));
+    Show (
+        nomelocal VARCHAR2 (50),
+        datalineup DATE,
+        horainicio VARCHAR2 (10)
+    );
 
 CREATE TABLE
     Local (nome VARCHAR2 (50));
