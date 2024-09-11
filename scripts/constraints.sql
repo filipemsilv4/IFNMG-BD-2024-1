@@ -2,11 +2,29 @@
 ALTER TABLE Pessoa
     ADD CONSTRAINT Pessoa_CPF_PK PRIMARY KEY (CPF);
 
+-- Servico
+ALTER TABLE Servico
+    ADD CONSTRAINT Servico_CNPJ_PK PRIMARY KEY (CNPJ);
+
+-- LineUp
+ALTER TABLE LineUp
+    ADD CONSTRAINT LineUp_data_PK PRIMARY KEY (datalineup);
+
+-- Local
+ALTER TABLE Local
+    ADD CONSTRAINT Local_nome_PK PRIMARY KEY (nome);
+
 -- TelefonePessoa
 ALTER TABLE TelefonePessoa
     ADD CONSTRAINT TelefonePessoa_CPFpessoa_FK FOREIGN KEY (CPFpessoa) REFERENCES Pessoa (CPF);
 
+ALTER TABLE TelefonePessoa
+    ADD CONSTRAINT TelefonePessoa_CPFpessoa_telefone_PK PRIMARY KEY (CPFpessoa, telefone);
+
 -- Integrante
+ALTER TABLE Integrante
+    ADD CONSTRAINT Integrante_CPFpessoa_PK PRIMARY KEY (CPFpessoa);
+
 ALTER TABLE Integrante
     ADD CONSTRAINT Integrante_CPFpessoa_FK FOREIGN KEY (CPFpessoa) REFERENCES Pessoa (CPF);
 
@@ -88,10 +106,6 @@ ALTER TABLE TelefoneServico
 ALTER TABLE TelefoneServico
     ADD CONSTRAINT TelefoneServico_CNPJservico_FK FOREIGN KEY (CNPJservico) REFERENCES Servico (CNPJ);
 
--- Servico
-ALTER TABLE Servico
-    ADD CONSTRAINT Servico_CNPJ_PK PRIMARY KEY (CNPJ);
-
 -- Ocorrencia
 ALTER TABLE Ocorrencia
     ADD CONSTRAINT Ocorrencia_numero_PK PRIMARY KEY (numero);
@@ -105,6 +119,19 @@ ALTER TABLE OcorrenciaPessoa
 
 ALTER TABLE OcorrenciaPessoa
     ADD CONSTRAINT OcorrenciaPessoa_CPFpessoa_FK FOREIGN KEY (CPFpessoa) REFERENCES Pessoa (CPF);
+
+ALTER TABLE OcorrenciaPessoa
+    ADD CONSTRAINT OcorrenciaPessoa_numeroocorrencia_FK FOREIGN KEY (numeroocorrencia) REFERENCES Ocorrencia (numero);
+
+-- Blog
+ALTER TABLE Blog
+    ADD CONSTRAINT Blog_url_PK PRIMARY KEY (url);
+
+ALTER TABLE Blog
+    ADD CONSTRAINT Blog_datalineup FOREIGN KEY (datalineup) REFERENCES LineUp (datalineup);
+
+ALTER TABLE Blog
+    MODIFY datalineup DATE NOT NULL;
 
 -- Post
 ALTER TABLE Post
@@ -126,23 +153,10 @@ ALTER TABLE Comentario
 ALTER TABLE Comentario
     ADD CONSTRAINT Comentario_idresposta_FK FOREIGN KEY (idresposta) REFERENCES Comentario (id);
 
--- Blog
-ALTER TABLE Blog
-    ADD CONSTRAINT Blog_url_PK PRIMARY KEY (url);
-
-ALTER TABLE Blog
-    ADD CONSTRAINT Blog_datalineup FOREIGN KEY (datalineup) REFERENCES LineUp (datalineup);
-
-ALTER TABLE Blog
-    MODIFY datalineup DATE NOT NULL;
-
--- LineUp
-ALTER TABLE LineUp
-    ADD CONSTRAINT LineUp_data_PK PRIMARY KEY (datalineup);
-
 -- Show
 ALTER TABLE Show
-    ADD CONSTRAINT Show_nomelocal_datalineup_PK PRIMARY KEY (nomelocal, datalineup);
+    ADD CONSTRAINT Show_nomelocal_datalineup_horainicio_PK 
+    PRIMARY KEY (nomelocal, datalineup, horainicio);
 
 ALTER TABLE Show
     ADD CONSTRAINT Show_nomelocal_FK FOREIGN KEY (nomelocal) REFERENCES Local (nome);
@@ -150,22 +164,14 @@ ALTER TABLE Show
 ALTER TABLE Show
     ADD CONSTRAINT Show_datalineup_FK FOREIGN KEY (datalineup) REFERENCES LineUp (datalineup);
 
--- Local
-ALTER TABLE Local
-    ADD CONSTRAINT Local_nome_PK PRIMARY KEY (nome);
-
 -- Banda
 ALTER TABLE Banda
     ADD CONSTRAINT Banda_nome_PK PRIMARY KEY (nome);
 
 ALTER TABLE Banda
-    ADD CONSTRAINT Banda_nomelocalshow_FK FOREIGN KEY (nomelocalshow) REFERENCES Show (nomelocal);
-
-ALTER TABLE Banda
-    ADD CONSTRAINT Banda_datalineupshow_FK FOREIGN KEY (datalineupshow) REFERENCES Show (datalineup);
-
-ALTER TABLE Banda
-    ADD CONSTRAINT Banda_horainicioshow_FK FOREIGN KEY (horainicioshow) REFERENCES Show (horainicio);
+    ADD CONSTRAINT Banda_show_FK 
+    FOREIGN KEY (nomelocalshow, datalineupshow, horainicioshow) 
+    REFERENCES Show (nomelocal, datalineup, horainicio);
 
 -- IntegranteBanda
 ALTER TABLE IntegranteBanda
