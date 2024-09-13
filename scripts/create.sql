@@ -71,10 +71,10 @@ CREATE TABLE
 
 CREATE TABLE
     Ocorrencia (
-        CPFprofissionalseg VARCHAR2 (11),
         numero NUMBER,
         dataocorrencia DATE,
         descricao VARCHAR2 (50),
+        CPFprofissionalseg VARCHAR2 (11),
         longitude NUMBER,
         latitude NUMBER
     );
