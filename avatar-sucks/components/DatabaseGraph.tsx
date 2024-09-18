@@ -65,9 +65,9 @@ function generateCytoscapeElements(relations: any) {
     nodes.add(PK_TABLE);
     edges.push({
       data: {
-        id: `${PK_TABLE}-${TABLE_NAME}`,
-        source: PK_TABLE,
-        target: TABLE_NAME,
+        id: `${TABLE_NAME}-${PK_TABLE}`,
+        source: TABLE_NAME,
+        target: PK_TABLE,
         label: COLUMN_NAME
       }
     });
