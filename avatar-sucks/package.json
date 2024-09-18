@@ -9,10 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@azure/app-configuration": "^1.7.0",
+    "@azure/identity": "^4.4.1",
+    "@azure/keyvault-secrets": "^4.8.0",
+    "@tanstack/react-table": "^8.20.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.441.0",
     "next": "14.2.12",
+    "next-connect": "^1.0.0",
+    "oci-common": "^2.94.0",
+    "oci-objectstorage": "^2.94.0",
+    "oci-secrets": "^2.94.0",
+    "oracledb": "^6.6.0",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.5.2",
@@ -20,6 +29,7 @@
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/oracledb": "^6.5.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
