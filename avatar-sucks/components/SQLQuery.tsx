@@ -35,8 +35,13 @@ export default function SQLQuery() {
         setMessage(`Operação concluída. Linhas afetadas: ${data.rowsAffected}`);
       }
     } catch (err) {
-      setError(err.message);
-      console.error(err);
+      if (err instanceof Error) {
+        setError(err.message);
+        console.error(err);
+      } else {
+        setError('An unknown error occurred');
+        console.error('An unknown error occurred', err);
+      }
     }
   };
 

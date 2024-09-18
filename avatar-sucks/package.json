@@ -29,6 +29,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/isomorphic-fetch": "^0.0.39",
+    "@types/jssha": "^3.0.0",
     "@types/node": "^20",
     "@types/oracledb": "^6.5.1",
     "@types/react": "^18",

@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
     console.error(error);
     return NextResponse.json({ 
       error: 'Erro ao executar consulta',
-      details: error.message
+      details: (error as Error).message
     }, { status: 500 });
   } finally {
     if (connection) {
