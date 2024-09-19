@@ -1,10 +1,15 @@
 'use client';
 import TableSelector from '@/components/TableSelector';
 import DatabaseGraph from '@/components/DatabaseGraph';
+import ColoniaTable from '@/components/ColoniaManager';
 
 export default function HomePage() {
   return (
     <div className="container mx-auto py-10">
+      <section>
+      <h1 className="text-2xl font-bold mb-5">Colonia</h1>
+      <ColoniaTable></ColoniaTable>
+      </section>
       <h1 className="text-2xl font-bold mb-5">Explorador de Banco de Dados</h1>
       <div className="space-y-8">
         <section>
