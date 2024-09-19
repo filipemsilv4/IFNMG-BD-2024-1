@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,13 +10,13 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { toast } from "@/hooks/use-toast";
 import RowSelector from './RowSelector';
 
-// Definindo o schema de validação
 const formSchema = z.object({
+  id_colonia: z.number().positive("ID deve ser um número positivo"),
   nome: z.string().min(1, "Nome é obrigatório"),
   apelido: z.string().min(1, "Apelido é obrigatório"),
   pressurizada: z.boolean(),
   id_jazida: z.number(),
-  registro_empresa: z.string().length(8, "Registro da empresa deve ter 8 caracteres")
+  registro_empresa: z.string().max(8, "Registro da empresa deve ter 8 caracteres")
 });
 
 export default function NovaColonia() {
@@ -25,6 +26,7 @@ export default function NovaColonia() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      id_colonia: 0,
       nome: "",
       apelido: "",
       pressurizada: false,
@@ -34,21 +36,42 @@ export default function NovaColonia() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Submetendo formulário:", values);
     try {
+      // Check if the ID already exists
+      const checkResponse = await fetch('/api/query', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          query: `SELECT COUNT(*) as count FROM colonia WHERE id_colonia = ${values.id_colonia}`
+        }),
+      });
+
+      const checkData = await checkResponse.json();
+      
+      if (!checkResponse.ok) {
+        throw new Error('Falha ao verificar ID da colônia');
+      }
+
+      if (checkData.rows[0].COUNT > 0) {
+        form.setError('id_colonia', {
+          type: 'manual',
+          message: 'Este ID de colônia já existe. Por favor, escolha outro.'
+        });
+        return; // Stop the submission process here
+      }
+
+      // If ID doesn't exist, proceed with insertion
       const response = await fetch('/api/query', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          query: `INSERT INTO colonia (id_colonia, nome, apelido, pressurizada, id_jazida, registro_empresa)
-                  VALUES (colonia_seq.NEXTVAL, :nome, :apelido, :pressurizada, :id_jazida, :registro_empresa)`,
-          params: {
-            nome: values.nome,
-            apelido: values.apelido,
-            pressurizada: values.pressurizada ? 1 : 0,
-            id_jazida: values.id_jazida,
-            registro_empresa: values.registro_empresa
-          }
+          query: `
+            BEGIN
+              INSERT INTO colonia (id_colonia, nome, apelido, pressurizada, id_jazida, registro_empresa)
+              VALUES (${values.id_colonia}, '${values.nome}', '${values.apelido}', ${values.pressurizada ? 1 : 0}, ${values.id_jazida}, '${values.registro_empresa}');
+              COMMIT;
+            END;
+          `
         }),
       });
   
@@ -63,7 +86,7 @@ export default function NovaColonia() {
   
       toast({
         title: "Colônia cadastrada com sucesso!",
-        description: `A colônia ${values.nome} foi cadastrada.`,
+        description: `A colônia ${values.nome} foi cadastrada com o ID ${values.id_colonia}.`,
       });
   
       form.reset();
@@ -80,6 +103,20 @@ export default function NovaColonia() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="id_colonia"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>ID da Colônia</FormLabel>
+              <FormControl>
+                <Input type="number" placeholder="ID da Colônia" {...field} onChange={(e) => field.onChange(parseInt(e.target.value))} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
         <FormField
           control={form.control}
           name="nome"

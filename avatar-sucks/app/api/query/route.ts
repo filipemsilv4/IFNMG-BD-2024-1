@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import oracledb from 'oracledb';
 
 export async function POST(request: NextRequest) {
-  const { query } = await request.json();
+  let { query } = await request.json();
   let connection;
+  query = query.toUpperCase();
 
   console.log('Query recebida:', query); // Log para debug
 
@@ -23,6 +24,7 @@ export async function POST(request: NextRequest) {
     );
 
     console.log('Query executada com sucesso'); // Log para debug
+    console.log(result.rowsAffected, 'linhas afetadas'); // Log para debug
 
     // Para consultas SELECT, retornamos as colunas e as linhas
     if (query.trim().toUpperCase().startsWith('SELECT')) {
