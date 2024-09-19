@@ -16,7 +16,7 @@ const formSchema = z.object({
   apelido: z.string().min(1, "Apelido é obrigatório"),
   pressurizada: z.boolean(),
   id_jazida: z.number(),
-  registro_empresa: z.string().max(8, "Registro da empresa deve ter 8 caracteres")
+  registro_empresa: z.string().max(8, "Registro da empresa não deve exceder 8 caracteres")
 });
 
 export default function NovaColonia() {
