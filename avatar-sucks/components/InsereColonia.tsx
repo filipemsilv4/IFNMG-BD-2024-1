@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { toast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast"
 import RowSelector from './RowSelector';
 
 const formSchema = z.object({
@@ -19,6 +19,7 @@ const formSchema = z.object({
 });
 
 export default function NovaColonia() {
+  const { toast } = useToast()
   const [selectedJazida, setSelectedJazida] = useState<any | null>(null);
   const [selectedEmpresa, setSelectedEmpresa] = useState<any | null>(null);
 

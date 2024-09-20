@@ -16,7 +16,7 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
-import { toast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast"
 import RowSelector from './RowSelector';
 
 const formSchema = z.object({
@@ -35,6 +35,7 @@ interface EditarColoniaProps {
 }
 
 export default function EditarColonia({ coloniaId }: EditarColoniaProps) {
+    const { toast } = useToast()
     const [loading, setLoading] = useState(true);
     const [currentJazida, setCurrentJazida] = useState<string | null>(null);
     const [currentEmpresa, setCurrentEmpresa] = useState<string | null>(null);
@@ -100,6 +101,7 @@ export default function EditarColonia({ coloniaId }: EditarColoniaProps) {
 
     async function onSubmit(values: FormValues) {
         try {
+            const oldValues = form.getValues();
             const response = await fetch('/api/query', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -130,8 +132,10 @@ export default function EditarColonia({ coloniaId }: EditarColoniaProps) {
 
             toast({
                 title: "Colônia atualizada com sucesso!",
-                description: `A colônia ${values.nome} foi atualizada.`,
+                description: `A colônia ${oldValues.nome} foi atualizada.`,
             });
+
+            form.reset();
 
             // Recarrega os dados da colônia após a atualização
             fetchColoniaData(coloniaId);
