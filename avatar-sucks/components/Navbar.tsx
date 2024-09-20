@@ -21,6 +21,7 @@ export function Navbar() {
             <NavLink href="/explorador">Explorador</NavLink>
             <NavLink href="/insere_arvore">CriaArvore</NavLink>
             <NavLink href="/remove_arvore">RemoveArvore</NavLink>
+            <NavLink href="/edita_arvore">EditaArvore</NavLink>
           </div>
           <Button
             variant="ghost"
