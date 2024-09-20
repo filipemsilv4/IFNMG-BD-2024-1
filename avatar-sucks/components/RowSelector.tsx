@@ -81,7 +81,7 @@ export default function RowSelector({ tableName, selectAttribute, onSelect, disp
 
   return (
     <div className="space-y-2">
-      <Label htmlFor="row-select">{`Selecione por ${selectAttribute}`}</Label>
+      <Label htmlFor="row-select">{`Selecione um(a) ${tableName} pelo(a) ${selectAttribute}`}</Label>
       <Select onValueChange={handleRowSelect}>
         <SelectTrigger id="row-select" className="w-[300px]">
           <SelectValue placeholder={`Selecione um ${selectAttribute}`} />
