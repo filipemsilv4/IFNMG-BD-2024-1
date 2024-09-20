@@ -42,40 +42,6 @@ INSERT INTO Empresa (registro, nome) VALUES ('EMP-008', 'Dunder Mifflin Utica');
 INSERT INTO Empresa (registro, nome) VALUES ('EMP-009', 'Dunder Mifflin Stamford');
 INSERT INTO Empresa (registro, nome) VALUES ('EMP-010', 'Dunder Mifflin Scranton');
 
--- Insert into Humano
-INSERT INTO Humano (nome, tipo) VALUES ('Michael Scott', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Dwight Schrute', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Jim Halpert', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Pam Beesly', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Ryan Howard', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Andy Bernard', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Robert California', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Kevin Malone', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Angela Martin', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Oscar Martinez', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Meredith Palmer', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Creed Bratton', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Kelly Kapoor', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Holly Flax', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Jan Levinson', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('David Wallace', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Gabe Lewis', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Nellie Bertram', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Charles Miner', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Deangelo Vickers', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Jo Bennett', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Robert Lipton', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Roy Anderson', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Darryl Philbin', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Craig', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Lonny Collins', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Madge Madsen', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Glenn', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Hidetoshi Hasagawa', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Hide', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Hank Tate', 'Minerador');
-INSERT INTO Humano (nome, tipo) VALUES ('Rolf', 'Minerador');
-
 -- Insert into Criatura
 INSERT INTO Criatura (nome, tipo) VALUES ('Humberto', 'Na_vi');
 INSERT INTO Criatura (nome, tipo) VALUES ('Doisberto', 'Na_vi');
@@ -192,6 +158,40 @@ INSERT INTO Colonia (nome, apelido, pressurizada, id_jazida, registro_empresa) V
 INSERT INTO Colonia (nome, apelido, pressurizada, id_jazida, registro_empresa) VALUES ('Colonia 1 da Dunder Mifflin Stamford', 'Colonia Dunder Stamford 1', 0, 10, 'EMP-009');
 INSERT INTO Colonia (nome, apelido, pressurizada, id_jazida, registro_empresa) VALUES ('Colonia 1 da Dunder Mifflin Scranton', 'Colonia Dunder Scranton 1', 1, 1, 'EMP-010');
 
+-- Insert into Humano
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Michael Scott', 'Cientista', 1);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Dwight Schrute', 'Cientista', 1);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Jim Halpert', 'Cientista', 1);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Pam Beesly', 'Cientista', 2);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Ryan Howard', 'Cientista', 2);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Andy Bernard', 'Cientista', 2);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Robert California', 'Cientista', 3);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Kevin Malone', 'Cientista', 3);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Angela Martin', 'Cientista', 3);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Oscar Martinez', 'Cientista', 4);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Meredith Palmer', 'Cientista', 4);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Creed Bratton', 'Cientista', 4);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Kelly Kapoor', 'Militar', 5);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Holly Flax', 'Militar', 6);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Jan Levinson', 'Militar', 7);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('David Wallace', 'Militar', 8);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Gabe Lewis', 'Militar', 9);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Nellie Bertram', 'Militar', 10);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Charles Miner', 'Militar', 11);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Deangelo Vickers', 'Militar', 12);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Jo Bennett', 'Militar', 13);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Robert Lipton', 'Militar', 14);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Roy Anderson', 'Minerador', 15);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Darryl Philbin', 'Minerador', 16);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Craig', 'Minerador', 1);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Lonny Collins', 'Minerador', 2);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Madge Madsen', 'Minerador', 3);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Glenn', 'Minerador', 4);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Hidetoshi Hasagawa', 'Minerador', 5);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Hide', 'Minerador', 6);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Hank Tate', 'Minerador', 7);
+INSERT INTO Humano (nome, tipo, id_colonia) VALUES ('Rolf', 'Minerador', 8);
+
 -- Insert into Container
 INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Laboratório Alpha', 'LAB-A', 'Laboratorio', 'Grande', 1);
 INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Laboratório Beta', 'LAB-B', 'Laboratorio', 'Médio', 2);
@@ -223,6 +223,12 @@ INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Depósit
 INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Depósito de Ferramentas', 'DEP-FER', 'Deposito', 'Médio', 8);
 INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Depósito de Equipamentos', 'DEP-EQ', 'Deposito', 'Pequeno', 9);
 INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Depósito de Veículos', 'DEP-VEI', 'Deposito', 'Grande', 10);
+INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Maquinário de Jazida', 'MAQ-1', 'Maquinario', 'Grande', 11);
+INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Maquinário de Jazida', 'MAQ-2', 'Maquinario', 'Médio', 12);
+INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Maquinário de Jazida', 'MAQ-3', 'Maquinario', 'Pequeno', 13);
+INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Maquinário de Jazida', 'MAQ-4', 'Maquinario', 'Grande', 14);
+INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Maquinário de Jazida', 'MAQ-5', 'Maquinario', 'Médio', 15);
+INSERT INTO Container (nome, sigla, tipo, tamanho, id_colonia) VALUES ('Maquinário de Jazida', 'MAQ-6', 'Maquinario', 'Pequeno', 16);
 
 
 -- Insert into Laboratorio
