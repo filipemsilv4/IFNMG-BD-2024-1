@@ -19,6 +19,7 @@ export function Navbar() {
             <NavLink href="/insere_colonia">CriaColonia</NavLink>
             <NavLink href="/edita_colonia">EditaColonia</NavLink>
             <NavLink href="/explorador">Explorador</NavLink>
+            <NavLink href="/insere_arvore">CriaArvore</NavLink>
           </div>
           <Button
             variant="ghost"
