@@ -49,6 +49,8 @@ type ArvoreBase = {
   IDADE: number;
   ALTURA: number;
   ID_REGIAO: number;
+  NOME_REGIAO: string;
+  TIPO_REGIAO: string;
 };
 
 type ArvoreVida = ArvoreBase & {
