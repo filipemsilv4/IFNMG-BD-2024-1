@@ -145,6 +145,7 @@ export default function NovaColonia() {
             setSelectedEmpresa(empresa);
             form.setValue('registro_empresa', empresa.REGISTRO);
           }}
+          displayAttributes={["NOME", "REGISTRO"]}
         />
 
         <Button type="submit">Cadastrar Colônia</Button>

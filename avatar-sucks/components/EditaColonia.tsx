@@ -229,6 +229,7 @@ export default function EditarColonia({ coloniaId }: EditarColoniaProps) {
                         tableName="EMPRESA"
                         selectAttribute="REGISTRO"
                         onSelect={(empresa) => form.setValue('registro_empresa', empresa.REGISTRO)}
+                        displayAttributes={["NOME", "REGISTRO"]}
                     />
                 </div>
 
