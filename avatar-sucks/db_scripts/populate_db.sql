@@ -6,15 +6,39 @@ INSERT INTO Regiao (nome, tipo) VALUES ('Montanhas Flutuantes', 'Aérea');
 INSERT INTO Regiao (nome, tipo) VALUES ('Mar Bioluminescente', 'Aquática');
 
 -- Insert into Empresa
-INSERT INTO Empresa (registro, nome) VALUES ('RDA-001', 'Resources Development Administration');
-INSERT INTO Empresa (registro, nome) VALUES ('PCC-002', 'Pandora Conservation Corporation');
+INSERT INTO Empresa (registro, nome) VALUES ('RDA-001', 'Dunder Mifflin');
+INSERT INTO Empresa (registro, nome) VALUES ('PCC-002', 'Sabre Corporation');
+INSERT INTO Empresa (registro, nome) VALUES ('PPR-001', 'Athlead');
+INSERT INTO Empresa (registro, nome) VALUES ('PPR-002', 'WUPHF.com');
+INSERT INTO Empresa (registro, nome) VALUES ('PCC-003', 'Michael Scott Paper Company');
+INSERT INTO Empresa (registro, nome) VALUES ('PCC-004', 'Dunder Mifflin Sabre');
+INSERT INTO Empresa (registro, nome) VALUES ('PCC-005', 'Dunder Mifflin Infinity');
+INSERT INTO Empresa (registro, nome) VALUES ('PCC-006', 'Dunder Mifflin Utica');
+INSERT INTO Empresa (registro, nome) VALUES ('PCC-007', 'Dunder Mifflin Stamford');
+INSERT INTO Empresa (registro, nome) VALUES ('PCC-008', 'Dunder Mifflin Scranton');
+
 
 -- Insert into Humano
-INSERT INTO Humano (nome, tipo) VALUES ('Jake Sully', 'Avatar');
-INSERT INTO Humano (nome, tipo) VALUES ('Neytiri', 'Na_vi');
-INSERT INTO Humano (nome, tipo) VALUES ('Grace Augustine', 'Cientista');
-INSERT INTO Humano (nome, tipo) VALUES ('Miles Quaritch', 'Militar');
-INSERT INTO Humano (nome, tipo) VALUES ('Parker Selfridge', 'Executivo');
+INSERT INTO Humano (nome, tipo) VALUES ('Michael Scott', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Dwight Schrute', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Jim Halpert', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Pam Beesly', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Ryan Howard', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Andy Bernard', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Robert California', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Kevin Malone', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Angela Martin', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Oscar Martinez', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Meredith Palmer', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Creed Bratton', 'Cientista');
+INSERT INTO Humano (nome, tipo) VALUES ('Kelly Kapoor', 'Militar');
+INSERT INTO Humano (nome, tipo) VALUES ('Holly Flax', 'Militar');
+INSERT INTO Humano (nome, tipo) VALUES ('Stanley Hudson', 'Militar');
+INSERT INTO Humano (nome, tipo) VALUES ('Darryl Philbin', 'Militar');
+INSERT INTO Humano (nome, tipo) VALUES ('Toby Flenderson', 'Minerador');
+INSERT INTO Humano (nome, tipo) VALUES ('Jan Levinson', 'Minerador');
+INSERT INTO Humano (nome, tipo) VALUES ('David Wallace', 'Minerador');
+INSERT INTO Humano (nome, tipo) VALUES ('Gabe Lewis', 'Minerador');
 
 -- Insert into Criatura
 INSERT INTO Criatura (nome, tipo) VALUES ('Na_vi', 'Humanóide');
@@ -79,20 +103,37 @@ INSERT INTO Escavadeira (peso_operacional, potencia_motor, capacidade_pa, id_maq
 INSERT INTO Caminhao (peso_operacional, potencia_motor, capacidade_cacamba, id_maquinario) VALUES (60000, 800, 100, 2);
 
 -- Insert into Cientista
-INSERT INTO Cientista (especialidade, id_humano) VALUES ('Biologia', 3);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Biologia', 1);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Física', 2);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Química', 3);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Matemática', 4);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Engenharia', 5);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Medicina', 6);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Psicologia', 7);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Economia', 8);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Sociologia', 9);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Filosofia', 10);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('História', 11);
+INSERT INTO Cientista (especialidade, id_humano) VALUES ('Geografia', 12);
 
 -- Insert into Militar
-INSERT INTO Militar (especialidade, patente, id_humano) VALUES ('Combate', 'Coronel', 4);
+INSERT INTO Militar (especialidade, patente, id_humano) VALUES ('Combate', 'Coronel', 13);
+INSERT INTO Militar (especialidade, patente, id_humano) VALUES ('Logística', 'Major', 14);
+INSERT INTO Militar (especialidade, patente, id_humano) VALUES ('Inteligência', 'Capitão', 15);
+INSERT INTO Militar (especialidade, patente, id_humano) VALUES ('Medicina', 'Tenente', 16);
 
 -- Insert into Minerador
-INSERT INTO Minerador (funcao, id_humano) VALUES ('Operador de Escavadeira', 5);
+INSERT INTO Minerador (funcao, id_humano) VALUES ('Operador de Escavadeira', 17);
+INSERT INTO Minerador (funcao, id_humano) VALUES ('Operador de Caminhão', 18);
+INSERT INTO Minerador (funcao, id_humano) VALUES ('Supervisor de Jazida', 19);
+INSERT INTO Minerador (funcao, id_humano) VALUES ('Engenheiro de Minas', 20);
 
 -- Insert into Resultado
 INSERT INTO Resultado (descricao, id_pesquisa) VALUES ('Avatar Jake Sully criado com sucesso', 1);
 INSERT INTO Resultado (descricao, id_pesquisa) VALUES ('Nova técnica de extração de Unobtanium', 2);
 
 -- Insert into Avatar
-INSERT INTO Avatar (material_genetico, id_humano, id_resultado) VALUES ('Na_vi', 1, 1);
+INSERT INTO Avatar (material_genetico, id_humano, id_resultado) VALUES ('AGGAT', 1, 1);
 
 -- Insert into Arvore
 INSERT INTO Arvore (tipo, idade, altura, id_regiao) VALUES ('Hometree', 10000, 500, 1);
@@ -142,6 +183,17 @@ INSERT INTO Banshee (altura_max_voo, cor_predominante, id_criatura, id_montanha)
 
 -- Insert into Emprega_Cientista
 INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 1);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 2);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 3);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 4);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 5);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 6);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 7);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 8);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 9);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 10);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 11);
+INSERT INTO Emprega_Cientista (id_laboratorio, id_cientista) VALUES (1, 12);
 
 -- Insert into Desenvolve
 INSERT INTO Desenvolve (id_laboratorio, id_cientista, id_pesquisa) VALUES (1, 1, 1);
