@@ -16,7 +16,8 @@ export function Navbar() {
             AvatarSucks
           </Link>
           <div className="hidden md:flex space-x-4">
-            <NavLink href="/colonia">Colonia</NavLink>
+            <NavLink href="/insere_colonia">CriaColonia</NavLink>
+            <NavLink href="/edita_colonia">EditaColonia</NavLink>
             <NavLink href="/explorador">Explorador</NavLink>
           </div>
           <Button

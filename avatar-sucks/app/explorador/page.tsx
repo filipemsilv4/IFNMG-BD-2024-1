@@ -5,19 +5,12 @@ import TableSelector from '@/components/TableSelector';
 export default function ExploradorPage() {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Explorador de Banco de Dados</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Card>
-          <CardHeader>
-            <CardTitle>Seletor de Tabelas</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <TableSelector />
-          </CardContent>
-        </Card>
-      </CardContent>
+        <CardHeader>
+        <CardTitle>Explorador de Tabelas</CardTitle>
+        </CardHeader>
+        <CardContent>
+        <TableSelector />
+        </CardContent>
     </Card>
   );
 }

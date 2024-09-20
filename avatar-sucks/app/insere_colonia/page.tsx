@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import ColoniaTable from '@/components/ColoniaManager';
+import ColoniaTable from '@/components/InsereColonia';
 
 export default function ColoniaPage() {
   return (
