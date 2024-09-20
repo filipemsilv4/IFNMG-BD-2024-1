@@ -1,14 +1,14 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import NovaArvore from '@/components/InsereArvore';
+import RemoveArvore from '@/components/RemoveArvore';
 
 export default function ColoniaPage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Insere Arvore</CardTitle>
+        <CardTitle>Remove Arvore</CardTitle>
       </CardHeader>
       <CardContent>
-        <NovaArvore />
+        <RemoveArvore />
       </CardContent>
     </Card>
   );
