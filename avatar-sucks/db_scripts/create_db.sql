@@ -198,7 +198,6 @@ CREATE TABLE Arvore_Lar (
     id_arvore_lar NUMBER GENERATED ALWAYS AS IDENTITY,
     capacidade NUMBER,
     habitantes NUMBER,
-    idade NUMBER,
     id_arvore NUMBER NOT NULL,
     CONSTRAINT pk_arvore_lar PRIMARY KEY (id_arvore_lar),
     CONSTRAINT fk_arvore_lar_arvore FOREIGN KEY (id_arvore) REFERENCES Arvore(id_arvore) ON DELETE CASCADE

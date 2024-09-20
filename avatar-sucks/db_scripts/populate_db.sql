@@ -144,7 +144,7 @@ INSERT INTO Arvore (tipo, idade, altura, id_regiao) VALUES ('Willowtree', 7500, 
 INSERT INTO Arvore_Vida (produz_sementes, id_arvore) VALUES (1, 1);
 
 -- Insert into Arvore_Lar
-INSERT INTO Arvore_Lar (capacidade, habitantes, idade, id_arvore) VALUES (500, 300, 8000, 1);
+INSERT INTO Arvore_Lar (capacidade, habitantes, id_arvore) VALUES (500, 300, 1);
 
 -- Insert into Arvore_Alma
 INSERT INTO Arvore_Alma (eywa, id_arvore) VALUES (1, 1);
