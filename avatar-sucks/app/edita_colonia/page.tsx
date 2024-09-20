@@ -21,7 +21,7 @@ export default function ColoniaPage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Colônia</CardTitle>
+        <CardTitle>Editar Colônia</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

@@ -5,7 +5,7 @@ export default function ColoniaPage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Remove Arvore</CardTitle>
+        <CardTitle>Remover Árvore</CardTitle>
       </CardHeader>
       <CardContent>
         <RemoveArvore />

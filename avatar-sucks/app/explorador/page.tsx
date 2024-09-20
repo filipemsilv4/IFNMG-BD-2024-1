@@ -6,7 +6,7 @@ export default function ExploradorPage() {
   return (
     <Card>
         <CardHeader>
-        <CardTitle>Explorador de Tabelas</CardTitle>
+        <CardTitle>Explorar Tabelas</CardTitle>
         </CardHeader>
         <CardContent>
         <TableSelector />

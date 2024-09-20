@@ -5,7 +5,7 @@ export default function ColoniaPage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Colonia</CardTitle>
+        <CardTitle>Inserir Colônia</CardTitle>
       </CardHeader>
       <CardContent>
         <ColoniaTable />
