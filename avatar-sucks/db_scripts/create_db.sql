@@ -13,13 +13,6 @@ CREATE TABLE Empresa (
     CONSTRAINT pk_empresa PRIMARY KEY (registro)
 );
 
-CREATE TABLE Humano (
-    id_humano NUMBER GENERATED ALWAYS AS IDENTITY,
-    nome VARCHAR2(100) NOT NULL,
-    tipo VARCHAR2(50) NOT NULL,
-    CONSTRAINT pk_humano PRIMARY KEY (id_humano)
-);
-
 CREATE TABLE Criatura (
     id_criatura NUMBER GENERATED ALWAYS AS IDENTITY,
     nome VARCHAR2(100) NOT NULL,
@@ -66,6 +59,15 @@ CREATE TABLE Colonia (
     CONSTRAINT pk_colonia PRIMARY KEY (id_colonia),
     CONSTRAINT fk_colonia_jazida FOREIGN KEY (id_jazida) REFERENCES Jazida(id_jazida) ON DELETE CASCADE,
     CONSTRAINT fk_colonia_empresa FOREIGN KEY (registro_empresa) REFERENCES Empresa(registro) ON DELETE CASCADE
+);
+
+CREATE TABLE Humano (
+    id_humano NUMBER GENERATED ALWAYS AS IDENTITY,
+    nome VARCHAR2(100) NOT NULL,
+    tipo VARCHAR2(50) NOT NULL,
+    id_colonia NUMBER,
+    CONSTRAINT pk_humano PRIMARY KEY (id_humano),
+    CONSTRAINT fk_humano_colonia FOREIGN KEY (id_colonia) REFERENCES Colonia(id_colonia) ON DELETE CASCADE
 );
 
 CREATE TABLE Container (
